@@ -57,6 +57,7 @@ nav{
     left: 200px;
     top: 70px;
     z-index: 2;
+    
 }
 .back{
     position: absolute;
@@ -130,7 +131,24 @@ main {
 .teki{
     width: 600px;
 }
+
+@media screen and (max-width: 600px) {
+
+}
+@media screen and (max-width: 1024px) {
+}
 @media screen and (min-width: 1200px) {
+    header{
+        width: 250px;
+    }
+    .Image1{
+        margin: 20px;
+        padding-top: 100px;
+    }
+    .navi{
+        width: 180px;
+        padding-top: 80px;
+    }
     .Image2{
         top: 150px;
         left: 500px;
