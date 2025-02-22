@@ -292,6 +292,7 @@ footer{
 
     footer {
         padding: 10px;
+        font-size: 5px;
     }
 }
 
@@ -333,8 +334,8 @@ footer{
 @media screen and (min-width: 1200px) {
     .Image1 {
         padding: 80px;
-        width: 700px:
-        height: 700px;
+        width: 500px:
+        height: 500px;
     }
      .open_btn {
          padding: 100px;
