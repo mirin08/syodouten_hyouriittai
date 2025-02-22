@@ -1,0 +1,359 @@
+body{
+    position: relative;
+    margin: 0;
+}
+/* 背景全体の固定スタイル */
+/* 背景スタイル */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('text/backgraund.png') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* 上から降ってくるベール */
+.background-veil {
+    position: fixed;
+    top: -100%; /* 初期位置は画面の外（上） */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(240, 219, 195, 0.3); /* 半透明の黒 */
+    opacity: 0; /* 初期状態では非表示 */
+    pointer-events: none; /* クリック操作を無効化 */
+    z-index: 0; /* 他の要素より手前に表示 */
+}
+#opening-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000; /* 最前面に表示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.opening-image {
+    width: 20%;
+    height: auto;
+    justify-content: center; 
+    align-items: center;
+    object-fit: cover;
+    opacity: 1;
+    position: absolute;
+    z-index: 4;
+    transform: scaleX(-1);
+}
+.opening-backgraund{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+header {
+    margin-right: auto;
+    background-attachment: fixed;
+    align-items: center;
+    position: fixed;
+    display: flex;
+    justify-content: space-between; /* 左右に要素を分ける */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px;
+}
+.Image1{
+    padding: 10px;
+}
+.show {
+    display: flex;
+    justify-content: center; /* 横方向の中央揃え */
+    align-items: center; /* 縦方向の中央揃え */
+    height: 100vh; /* 画面全体の高さを使用 */
+    position: relative;
+    z-index: 10; /* 背景との関係を調整 */
+}
+.tennji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* 横方向に並べる */
+    font-size: xx-large;
+    z-index: 5;
+    list-style: none; /* 点を消す */
+    padding: 0;
+    margin: 0;
+    gap: 180px;
+}
+
+ul a {
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.hyou a {
+    margin-right: 50px; /* 左右の間隔を設定 */
+}
+
+.hyou, .ura {
+    width: 300px;
+    height: auto;
+}
+
+
+.rectangle{
+    width: 100vw;
+    height: 400px;
+    background:url("text/design-space-paper-textured-background.jpg");
+    left: 0;
+    z-index: 2;
+    margin: 0;
+    justify-content: center;
+    position: absolute;
+    overflow: visible;
+}
+.r_back{
+    width: 100vw;
+    height: 400px;
+    background-color: rgba(191, 192, 211, 0.2);
+    z-index: 4;
+    margin: 0;
+    justify-content: center;
+    position: absolute;
+    overflow: visible;
+}
+.haikei{
+    width: 96vw;
+    height: fit-content;
+    margin: 0;
+    top: 190px;
+    left: -50px;
+    position: absolute;
+    z-index: 3;
+}
+.sumi{
+    width: 96vw;
+    height: fit-content;
+    margin: 0;
+    top: 100px;
+    left: 0px;
+    position: absolute;
+    z-index: 3;
+}
+
+/* ポップアップ全体 */
+.popup_overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    z-index: 999;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s ease-in-out;
+}
+
+/* ポップアップが表示された状態 */
+.popup_overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ポップアップコンテンツ */
+.popup_content {
+    background: rgb(127, 131, 151, 0.6);
+    color: aliceblue;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+}
+
+/* 閉じるボタン */
+.close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #a9b6c8;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* トリガーボタン */
+.open_btn {
+    position: absolute; /* 右端に配置 */
+    right: 50px; /* 少し余白を作る */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: large;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: none; /* クリック時のアニメーション無効化 */
+}
+.open_btn:active, .open_btn:focus {
+    outline: none; /* クリック時の枠線を消す */
+    transform: none; /* クリック時の縮小アニメーションを消す */
+}
+ion-icon {
+    color: rgb(37, 38, 39);
+    font-size: 40px;
+}
+
+/* ポップアップが表示された状態 */
+.popup_overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+footer{
+    color: white;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    position: fixed;
+    z-index: 2;
+}
+
+
+/* レスポンシブデザイン用メディアクエリ */
+
+/* 画面幅が600px以下の場合 */
+@media screen and (max-width: 600px) {
+    .header-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Image1 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .open_btn {
+        right: 20px;
+        font-size: 40px;
+    }
+
+    .show{
+        text-align: center;
+    }
+    .tennji {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .hyou img, .ura img {
+        width: 160px;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px; /* 縦方向の間隔を設定 */
+    }
+
+    .rectangle, .r_back {
+        width: 100%;
+        height: 500px;
+    }
+
+    .haikei {
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 150px;
+    }
+
+    .popup_content {
+        width: 90%;
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+/* 画面幅が1024px以下の場合 */
+@media screen and (max-width: 1024px) {
+    .show{
+        text-align: center;
+    }
+
+    .tennji {
+        font-size: 60px;
+        gap: 50px;
+        transform: translateX(-50%);
+    }
+
+    .hyou img, .ura img {
+        width: 180px;
+        height: auto;
+    }
+
+    .rectangle, .r_back{
+        width: 100%;
+        height: 350px;
+    }
+
+    .haikei {
+        width: 90%;
+        left: 0;
+        top: 170px;
+    }
+
+    .popup_content {
+        width: 85%;
+        max-width: 350px;
+    }
+}
+
+/* 画面幅が1200px以上の場合 */
+@media screen and (min-width: 1200px) {
+    .tennji {
+        font-size: 120px;
+        top: 250px;
+        left: 50%;
+    }
+
+    .hyou img, .ura img {
+        width: 230px;
+        height: auto;
+    }
+
+    .rectangle, .r_back  {
+        width: 100%;
+        height: 400px;
+    }
+
+    .haikei {
+        width: 96vw;
+        left: -50px;
+        top: 190px;
+    }
+
+    .popup_content {
+        max-width: 400px;
+    }
+}
