@@ -265,7 +265,7 @@ footer{
         gap: 50px;
     }
 
-    .hyou img, .ura img {
+    .hyou , .ura {
         width: 160px;
         height: auto;
         margin-right: 0;
@@ -307,7 +307,7 @@ footer{
         transform: translateX(-50%);
     }
 
-    .hyou img, .ura img {
+    .hyou , .ura {
         width: 180px;
         height: auto;
     }
@@ -341,7 +341,7 @@ footer{
         left: 50%;
     }
 
-    .hyou img, .ura img {
+    .hyou , .ura {
         width: 500px;
         height: auto;
         padding: 100px;
