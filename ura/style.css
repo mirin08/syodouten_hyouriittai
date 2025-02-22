@@ -130,3 +130,41 @@ main {
 .teki{
     width: 600px;
 }
+@media screen and (min-width: 1200px) {
+    .Image2{
+        top: 150px;
+        left: 500px;
+        width: 1200px;
+        height: auto;
+    }
+    .jiai{
+        top: 170px;
+        left: 520px;
+        width: 1050px;
+        height: auto;
+    }
+    .eien{
+        width: 700px;
+    }
+    .deai{
+        width: 700px;
+    }
+    .seigi{
+        width: 700px;
+    }
+    .jyounetu{
+        width: 700px;
+    }
+    .chousen{
+        width: 700px;
+    }
+    .yasa{
+        width: 800px;
+    }
+    .kibou{
+        width: 700px;
+    }
+    .teki{
+        width: 800px;
+    }
+}
