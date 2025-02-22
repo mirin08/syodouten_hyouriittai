@@ -73,6 +73,8 @@ header {
 }
 .Image1{
     padding: 10px;
+    width:140px;
+    height:140px;
 }
 .show {
     display: flex;
